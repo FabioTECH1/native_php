@@ -11,6 +11,7 @@ use Livewire\Attributes\Title;
 use Native\Mobile\Events\Biometric\Completed;
 use Native\Mobile\Facades\Dialog;
 use Native\Mobile\Facades\System;
+use PhpParser\Node\Expr\Cast\Bool_;
 
 class Login extends Component
 {
@@ -37,10 +38,11 @@ class Login extends Component
     public function biometricLogin()
     {
         System::promptForBiometricID();
+        return;
     }
 
     #[On('native:' . Completed::class)]
-    public function handleBiometricAuth($success)
+    public function handleBiometricAuth(bool $success)
     {
         if ($success) {
             $user = User::first();   //only one user is assumed for simplicity
@@ -50,6 +52,7 @@ class Login extends Component
         } else {
             // Dialog::alert('Login Failed', 'Biometric authentication failed. Please try again.');
             Dialog::toast('Biometric authentication failed. Please try again.');
+            return redirect()->route('login');
         }
     }
 

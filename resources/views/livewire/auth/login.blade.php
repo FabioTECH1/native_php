@@ -70,7 +70,7 @@
                         class="flex-1 py-3 gradient-bg text-white rounded-lg font-medium flex items-center justify-center">
                         Login
                     </button>
-                    <button type="button"
+                    <button type="button" wire:click="biometricLogin"
                         class="biometric-btn w-14 py-3 gradient-bg text-white rounded-lg font-medium flex items-center justify-center"
                         title="Biometric Login">
                         <i class="fas fa-fingerprint"></i>

@@ -28,12 +28,12 @@ class Register extends Component
     {
         $this->validate();
 
+        User::query()->delete();
+
         $user = User::create([
             'name' => $this->name,
             'email' => $this->email,
             'password' => Hash::make($this->password),
-            'biometric_enabled' => $this->enable_biometric,
-            'device_uuid' => $this->enable_biometric ? $this->device_uuid : null,
         ]);
 
         Auth::login($user);

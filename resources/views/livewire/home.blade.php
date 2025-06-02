@@ -1,5 +1,4 @@
 <div class="app-container flex flex-col">
-
     <!-- Header -->
     <header class="bg-white shadow-sm px-6 py-4">
         <div class="flex justify-between items-center">
@@ -97,7 +96,7 @@
             </form>
 
             <!-- Biometric ID -->
-            <form wire:submit.prevent="" class="function-card">
+            <form wire:submit.prevent="biometric" class="function-card">
                 <button type="submit"
                     class="w-full bg-white p-4 rounded-xl shadow-sm border border-gray-200 text-left">
                     <div class="w-8 h-8 rounded-md gradient-bg flex items-center justify-center mb-2">
@@ -120,43 +119,7 @@
                 </button>
             </form>
 
-            <!-- Deep Links -->
-            <form wire:submit.prevent="" class="function-card">
-                <button type="submit"
-                    class="w-full bg-white p-4 rounded-xl shadow-sm border border-gray-200 text-left">
-                    <div class="w-8 h-8 rounded-md gradient-bg flex items-center justify-center mb-2">
-                        <i class="fas fa-link text-white text-sm"></i>
-                    </div>
-                    <h4 class="font-medium text-sm">Deep Links</h4>
-                    <p class="text-xs text-gray-500 mt-1">App URL handling</p>
-                </button>
-            </form>
-
-            <!-- NFC -->
-            <form wire:submit.prevent="" class="function-card">
-                <button type="submit"
-                    class="w-full bg-white p-4 rounded-xl shadow-sm border border-gray-200 text-left">
-                    <div class="w-8 h-8 rounded-md gradient-bg flex items-center justify-center mb-2">
-                        <i class="fas fa-wifi text-white text-sm"></i>
-                    </div>
-                    <h4 class="font-medium text-sm">NFC</h4>
-                    <p class="text-xs text-gray-500 mt-1">NF communication</p>
-                </button>
-            </form>
         </div>
-
-        {{-- <!-- NativePHP Camera Button -->
-        <div class="mt-4">
-            <button onclick="Native.camera.open()"
-                class="w-full bg-indigo-600 text-white px-4 py-2 rounded-xl shadow-sm">
-                <div class="flex items-center justify-center">
-                    <div class="w-8 h-8 rounded-md gradient-bg flex items-center justify-center mr-2">
-                        <i class="fas fa-camera text-white text-sm"></i>
-                    </div>
-                    <span class="font-medium text-sm">Open Camera (NativePHP)</span>
-                </div>
-            </button>
-        </div> --}}
     </main>
 
     <!-- Bottom Navigation -->
